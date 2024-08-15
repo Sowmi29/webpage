@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Tech</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">ABC Tech</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome to Our IT Solutions</h1>
+            <p>Innovative IT solutions for modern businesses.</p>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </div>
+        <div class="hero-image">
+            <img src="Workplace.jpg" alt="Hero Image">
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="card">
+            <div class="card-content">
+                <h2 class="slide-left">About Us</h2>
+                <p class="fade-in">Welcome to ABC Tech, where we specialize in turning your business dreams into reality. We create tailored services to boost your business growth. Our team of experts will help you with all your IT needs.</p>
+            </div>
+            <div class="card-image">
+                <img src="office.jpg" alt="About Image" class="zoom-in">
+            </div>
+        </div>
+    </section>
+    
+    <section id="services" class="services-section">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <h3>Web Development</h3>
+                <p>High-quality web development services for your business.</p>
+            </div>
+            <div class="service-item">
+                <h3>Mobile App Development</h3>
+                <p>Custom mobile app solutions for various platforms.</p>
+            </div>
+            <div class="service-item">
+                <h3>Cloud Solutions</h3>
+                <p>Scalable cloud solutions to meet your business needs.</p>
+            </div>
+            <div class="service-item">
+                <h3>IT Consulting</h3>
+                <p>Expert IT consulting services to guide your business.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <div class="tab-buttons">
+            <button class="active" onclick="showTab('office')">Our Office</button>
+            <button onclick="showTab('form')">Get In Touch</button>
+        </div>
+        <div id="office" class="tab-content contact-office active">
+            <h3>Our Office</h3>
+            <p>No. 43 We Work Galaxy, Residency Road, Shanthala Nagar,<br>
+               Ashok Nagar, Bengaluru, Karnataka - 560025</p>
+            <p>Email: <a href="mailto:contact@ABCtechsolutions.online">contact@ABCtechsolutions.online</a></p>
+        </div>
+        <div id="form" class="tab-content contact-form">
+            <h3>Get In Touch</h3>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 ABC Tech. All rights reserved.</p>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            const buttons = document.querySelectorAll('.tab-buttons button');
+            
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            document.getElementById(tabId).classList.add('active');
+            document.querySelector(`.tab-buttons button[onclick="showTab('${tabId}')"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>
